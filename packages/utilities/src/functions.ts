@@ -30,6 +30,7 @@ export const getStatusColor = (status: string) => {
       return "--archived";
     case CONSTANTS.STATUS.DISABLED:
     case CONSTANTS.STATUS.CLOSED:
+    case CONSTANTS.STATUS.CANCELED:
       return "--error";
     case CONSTANTS.STATUS.UNDER_REVIEW:
       return "--under-review";

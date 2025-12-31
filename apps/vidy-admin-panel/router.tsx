@@ -1,10 +1,11 @@
-import { AccountBillingSnapshot } from "@/pages/accountBillingSnapshot/index.js";
 import Authentication from "@/pages/authentication/index.js";
 import { CampaignDetail } from "@/pages/campaigns/campaignDetail/index.js";
 import { Campaigns } from "@/pages/campaigns/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
+import { PlansAndBilling } from "@/pages/plansAndBilling/index.js";
+import { PlansAndBillingDetail } from "@/pages/plansAndBilling/plansAndBillingDetail/index.js";
 import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
 import { Support } from "@/pages/support/index.js";
 import { SystemSetting } from "@/pages/systemSetting/index.js";
@@ -66,7 +67,11 @@ export const router = createBrowserRouter([
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING,
-        element: <AccountBillingSnapshot />,
+        element: <PlansAndBilling />,
+      },
+      {
+        path: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING_DETAIL,
+        element: <PlansAndBillingDetail />,
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,

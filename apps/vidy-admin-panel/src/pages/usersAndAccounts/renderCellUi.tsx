@@ -107,7 +107,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return (
       <td
         style={{ whiteSpace: "nowrap" }}
-      >{`${CONSTANTS.CURRENCY_SYMBOL} ${row?.mrr}`}</td>
+      >{`${CONSTANTS.CURRENCY_SYMBOL}${row?.mrr}`}</td>
     );
   }
 

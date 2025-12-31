@@ -176,6 +176,8 @@ import PREVIEW from "./svgs/preview.svg";
 import CHANGE_STATUS from "./svgs/change-status.svg";
 import REPLY from "./svgs/reply.svg";
 import CLOSED from "./svgs/closed.svg";
+import DOCUMENT from "./svgs/document.svg";
+import VIEW_STRIPE from "./svgs/view-stripe.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -361,5 +363,7 @@ export const ASSET_PATHS = {
     CHANGE_STATUS,
     REPLY,
     CLOSED,
+    DOCUMENT,
+    VIEW_STRIPE,
   },
 };
