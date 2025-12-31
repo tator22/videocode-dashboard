@@ -1125,3 +1125,202 @@ export const SUPPORT_NOTES_DATA = [
     created_at: "2025-12-11 11:27:08",
   },
 ];
+
+export const STRIPE_ACCOUNTS_DATA = [
+  {
+    account_id: "acct_1001",
+    account: {
+      name: "Acme Marketing",
+      email: "billing@acmemarketing.com",
+    },
+    status: "active", // active | past_due | canceled
+    billing_source: "stripe",
+    mrr: 299,
+    renewal_date: "2025-01-15",
+    payment_method: "card", // card | ach | invoice
+    limits_summary: {
+      campaigns: 50,
+      storage_gb: 200,
+      hits_per_month: 500000,
+    },
+    usage_this_period: {
+      campaigns_used: 32,
+      storage_used_gb: 145,
+      hits_used: 312450,
+    },
+  },
+
+  {
+    account_id: "acct_1002",
+    account: {
+      name: "Pixel Labs",
+      email: "accounts@pixellabs.io",
+    },
+    status: "past_due",
+    billing_source: "stripe",
+    mrr: 149,
+    renewal_date: "2024-12-28",
+    payment_method: "ach",
+    limits_summary: {
+      campaigns: 25,
+      storage_gb: 100,
+      hits_per_month: 200000,
+    },
+    usage_this_period: {
+      campaigns_used: 25,
+      storage_used_gb: 98,
+      hits_used: 195120,
+    },
+  },
+
+  {
+    account_id: "acct_1003",
+    account: {
+      name: "GrowthStack",
+      email: "finance@growthstack.ai",
+    },
+    status: "active",
+    billing_source: "stripe",
+    mrr: 499,
+    renewal_date: "2025-01-05",
+    payment_method: "invoice",
+    limits_summary: {
+      campaigns: 100,
+      storage_gb: 500,
+      hits_per_month: 1000000,
+    },
+    usage_this_period: {
+      campaigns_used: 61,
+      storage_used_gb: 280,
+      hits_used: 640890,
+    },
+  },
+
+  {
+    account_id: "acct_1004",
+    account: {
+      name: "Startup Hive",
+      email: "billing@startuphive.co",
+    },
+    status: "canceled",
+    billing_source: "stripe",
+    mrr: 79,
+    renewal_date: null,
+    payment_method: "card",
+    limits_summary: {
+      campaigns: 10,
+      storage_gb: 25,
+      hits_per_month: 50000,
+    },
+    usage_this_period: {
+      campaigns_used: 0,
+      storage_used_gb: 0,
+      hits_used: 0,
+    },
+  },
+
+  {
+    account_id: "acct_1005",
+    account: {
+      name: "BrandFlow",
+      email: "ops@brandflow.com",
+    },
+    status: "active",
+    billing_source: "stripe",
+    mrr: 199,
+    renewal_date: "2025-01-20",
+    payment_method: "card",
+    limits_summary: {
+      campaigns: 40,
+      storage_gb: 150,
+      hits_per_month: 300000,
+    },
+    usage_this_period: {
+      campaigns_used: 18,
+      storage_used_gb: 76,
+      hits_used: 154230,
+    },
+  },
+];
+
+export const PLAN_AND_BILLING_CHANGE_LOG_DATA = [
+  {
+    id: "audit_1001",
+    timestamp: "2025-01-10T10:45:12Z",
+    account: "Acme Marketing",
+    changed_by: "Admin",
+    change: {
+      campaigns: { old: 30, new: 50 },
+      storage_gb: { old: 120, new: 200 },
+      hits_per_month: { old: 300000, new: 500000 },
+      monthly_rate: { old: 199, new: 299 },
+    },
+    reason: "Plan upgrade after sales approval",
+    effective_date: "2025-01-10",
+    stripe_synced: true,
+  },
+
+  {
+    id: "audit_1002",
+    timestamp: "2024-12-05T08:20:44Z",
+    account: "Acme Marketing",
+    changed_by: "Automation",
+    change: {
+      campaigns: { old: 50, new: 50 },
+      storage_gb: { old: 200, new: 200 },
+      hits_per_month: { old: 500000, new: 500000 },
+      monthly_rate: { old: 299, new: 299 },
+    },
+    reason: "Account marked past due due to failed payment",
+    effective_date: "2024-12-05",
+    stripe_synced: true,
+  },
+
+  {
+    id: "audit_1003",
+    timestamp: "2024-11-18T15:02:31Z",
+    account: "Pixel Labs",
+    changed_by: "Support",
+    change: {
+      campaigns: { old: 20, new: 25 },
+      storage_gb: { old: 80, new: 100 },
+      hits_per_month: { old: 150000, new: 200000 },
+      monthly_rate: { old: 129, new: 149 },
+    },
+    reason: "Temporary limit increase for client retention",
+    effective_date: "2024-11-18",
+    stripe_synced: false,
+  },
+
+  {
+    id: "audit_1004",
+    timestamp: "2024-10-01T09:00:00Z",
+    account: "GrowthStack",
+    changed_by: "Finance",
+    change: {
+      campaigns: { old: 80, new: 100 },
+      storage_gb: { old: 400, new: 500 },
+      hits_per_month: { old: 800000, new: 1000000 },
+      monthly_rate: { old: 399, new: 499 },
+    },
+    reason: "Annual contract renewal with expanded limits",
+    effective_date: "2024-10-01",
+    stripe_synced: true,
+  },
+
+  {
+    id: "audit_1005",
+    timestamp: "2024-09-12T11:37:19Z",
+    account: "Startup Hive",
+    changed_by: "Admin",
+    change: {
+      campaigns: { old: 10, new: 0 },
+      storage_gb: { old: 25, new: 0 },
+      hits_per_month: { old: 50000, new: 0 },
+      monthly_rate: { old: 79, new: 0 },
+    },
+    reason: "Account cancellation requested by customer",
+    effective_date: "2024-09-12",
+    stripe_synced: true,
+  },
+];
