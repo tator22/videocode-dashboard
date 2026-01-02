@@ -64,7 +64,7 @@ export const UserAndAccountDetail: FC = () => {
         rightChildren={
           <>
             <Button
-              text={t(`${translationKey}.change_plan`)}
+              text={t(`${translationKey}.switch_account`)}
               size="medium"
               variant="secondary"
               buttonProps={{

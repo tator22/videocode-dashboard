@@ -2,11 +2,12 @@ import StatusChip from "@/components/StatusChip";
 import TableAction, {
   TableActionMenuItemRender,
 } from "@/components/TableAction";
+import { ASSET_PATHS } from "@repo/assets";
+import { Text } from "@repo/UI";
 import moment from "moment";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { TableColumnId } from "./tableColumn";
-import { ASSET_PATHS } from "@repo/assets";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -36,6 +37,25 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return <td style={{ whiteSpace: "nowrap" }}>{row?.account_name}</td>;
   }
 
+  // Name
+  if (el === "message") {
+    return (
+      <td>
+        <Text
+          containerProps={{
+            style: {
+              color: "inherit",
+              fontSize: "inherit",
+            },
+          }}
+          maximumNumberOfLines={2}
+        >
+          {row?.message}
+        </Text>
+      </td>
+    );
+  }
+
   // Status
   else if (el === "status") {
     return (
@@ -48,7 +68,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
       <td>
         <TableAction>
           <TableActionMenuItemRender
-            name={t(`${translationKey}.replay`)}
+            name={t(`${translationKey}.reply`)}
             icon={ASSET_PATHS.SVGS.REPLY}
           />
           <TableActionMenuItemRender

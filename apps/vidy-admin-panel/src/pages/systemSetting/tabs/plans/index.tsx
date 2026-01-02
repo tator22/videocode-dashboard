@@ -1,6 +1,6 @@
 import EditPlanModal from "@/components/EditPlanModal";
 import { Button, Text } from "@repo/UI";
-import { PRICING_PLANS } from "@repo/utilities";
+import { CONSTANTS, PRICING_PLANS } from "@repo/utilities";
 import { FC, MouseEventHandler, useState } from "react";
 import classes from "./style.module.css";
 
@@ -38,13 +38,11 @@ export const Plans: FC = () => {
 export const PlanCard = ({
   name,
   price_per_month,
-  price_per_year,
   description,
   onClick,
 }: {
   name: string;
   price_per_month: number;
-  price_per_year: number;
   description: string;
   onClick?: MouseEventHandler;
 }) => {
@@ -71,11 +69,11 @@ export const PlanCard = ({
             className: classes.monthly,
           }}
         >
-          {`${price_per_month}USD`}
+          {`${CONSTANTS.CURRENCY_SYMBOL}${price_per_month}`}
         </Text>
         <Text tag="p">Per month</Text>
       </div>
-
+      {/* 
       <div className={classes.yearlyPrice}>
         <Text
           tag="p"
@@ -83,7 +81,7 @@ export const PlanCard = ({
             className: classes.yearly,
           }}
         >{`${price_per_year}/yr, billed annually`}</Text>
-      </div>
+      </div> */}
 
       <div className={classes.yearlyPrice}>
         <Text

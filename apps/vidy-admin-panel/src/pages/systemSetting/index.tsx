@@ -4,7 +4,6 @@ import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./style.module.css";
 import { CampaignGuidelines } from "./tabs/campaignGuidelines";
-import { GlobalFeature } from "./tabs/globalFeature";
 import { Plans } from "./tabs/plans";
 import { PrivacyPolicy } from "./tabs/privacyPolicy";
 import { TermsOfService } from "./tabs/termsOfService";
@@ -21,10 +20,10 @@ export const SystemSetting: FC = () => {
       label: t(`${translationKey}.plans`),
       key: "plans",
     },
-    {
-      label: t(`${translationKey}.global_feature`),
-      key: "global_feature",
-    },
+    // {
+    //   label: t(`${translationKey}.global_feature`),
+    //   key: "global_feature",
+    // },
     {
       label: t(`${translationKey}.webhook`),
       key: "webhook",
@@ -55,8 +54,8 @@ export const SystemSetting: FC = () => {
       switch (activeTab.key) {
         case "plans":
           return <Plans />;
-        case "global_feature":
-          return <GlobalFeature />;
+        // case "global_feature":
+        //   return <GlobalFeature />;
         case "webhook":
           return <Webhook />;
         case "terms_of_service":

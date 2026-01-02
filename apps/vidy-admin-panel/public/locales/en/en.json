@@ -77,7 +77,7 @@
         "plan_details": "Plan Details",
         "suspended": "Suspended",
         "add_note": "Add Note",
-        "change_plan": "Change Plan",
+        "switch_account": "Switch to Account-Based User",
         "change_logs": "Change Logs",
         "details": "Details",
         "mrr": "MRR (Monthly Recurring Revenue)"
@@ -251,9 +251,12 @@
     },
     "SUPPORT": {
       "heading": "Support",
-      "replay": "Replay",
+      "reply": "Reply",
       "change_status": "Change Status",
-      "close_ticket": "Close Ticket"
+      "close_ticket": "Close Ticket",
+      "DETAIL": {
+        "heading": "Support Detail"
+      }
     }
   }
 }

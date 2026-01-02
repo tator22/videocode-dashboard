@@ -404,7 +404,7 @@ export const USERS_AND_ACCOUNTS = [
     account_name: "Techify Labs",
     email: "admin@techifylabs.com",
     platforms: ["iOS", "Android"],
-    type: "campaing",
+    type: "campaign",
     billing_type: "campaign_based",
     current_plan: "growth",
     status: "active",
@@ -501,6 +501,7 @@ export const USERS_AND_ACCOUNTS = [
 export const CAMPAIGNS = [
   {
     campaign_id: "CMP001",
+    email: "techify@mail.com",
     campaign_name: "Winter Sale Blast",
     account: "Techify Labs",
     plan: "growth",
@@ -512,6 +513,7 @@ export const CAMPAIGNS = [
   },
   {
     campaign_id: "CMP002",
+    email: "bluewave@mail.com",
     campaign_name: "Holiday Deals 2025",
     account: "BlueWave Media",
     plan: "starter",
@@ -523,6 +525,7 @@ export const CAMPAIGNS = [
   },
   {
     campaign_id: "CMP003",
+    email: "treandboost@mail.com",
     campaign_name: "App Launch Promo",
     account: "TrendBoost",
     plan: "pro_plus",
@@ -534,6 +537,7 @@ export const CAMPAIGNS = [
   },
   {
     campaign_id: "CMP004",
+    email: "exmaple@mail.com",
     campaign_name: "Summer Cashback Offer",
     account: "CreativeX Agency",
     plan: "essentials",
@@ -545,6 +549,7 @@ export const CAMPAIGNS = [
   },
   {
     campaign_id: "CMP005",
+    email: "test@mail.com",
     campaign_name: "Enterprise Direct Campaign",
     account: "AlphaCorp (Custom Account)",
     plan: "custom",
@@ -878,100 +883,56 @@ export const FLAGS_AND_ABUSE = [
 
 export const PRICING_PLANS = [
   {
-    id: "personal",
-    name: "Personal",
-    price_per_month: 3,
-    price_per_year: 36,
-    billing_cycle: "Annually",
-    description:
-      "One campaign, unlimited potential. The simplest way to launch your first video QR.",
-    benefits: {
-      campaigns: 1,
-      storage: "100MB",
-      scans_per_month: 500,
-      branding: "#PoweredbyVidCode Branding",
-    },
-    recommended: false,
-  },
-  {
-    id: "starter",
+    id: "Starter",
     name: "Starter",
-    price_per_month: 6,
-    price_per_year: 72,
-    billing_cycle: "Annually",
+    price_per_month: 1.99,
     description:
-      "More campaigns, same simplicity. Great for creators getting serious.",
-    benefits: {
-      campaigns: 10,
-      storage: "250MB",
-      scans_per_month: 1000,
-      branding: "#PoweredbyVidCode Branding",
-    },
+      "Perfect for simple Vidys on flyers, business cards, or small print runs.",
     recommended: false,
+    benefits: [
+      { label: "250MB Storage", icon: "STORAGE" },
+      { label: "1000 monthly hits", icon: "SCAN" },
+      { label: "#PoweredbyVidCode Branding", icon: "BRANDING" },
+    ],
   },
   {
-    id: "essential",
-    name: "Essential",
-    price_per_month: 12,
-    price_per_year: 144,
-    billing_cycle: "Annually",
-    description:
-      "Enough campaigns and storage to run real marketing, not just experiments.",
-    benefits: {
-      campaigns: 25,
-      storage: "1GB",
-      hits_per_month: 5000,
-      branding: "#PoweredbyVidCode Branding",
-    },
-    recommended: false,
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    price_per_month: 20,
-    price_per_year: 240,
-    billing_cycle: "Annually",
-    description:
-      "Built for real businesses. Manage dozens of campaigns and scale your video QR strategy.",
-    benefits: {
-      campaigns: 75,
-      storage: "5GB",
-      hits_per_month: 15000,
-      branding: "No #PoweredbyVidCode Branding",
-    },
-    recommended: true,
-  },
-  {
-    id: "pro",
+    id: "Pro",
     name: "Pro",
-    price_per_month: 35,
-    price_per_year: 420,
-    billing_cycle: "Annually",
+    price_per_month: 4.99,
     description:
-      "Run more campaigns, capture more conversions. Built for growing brands pushing video at scale.",
-    benefits: {
-      campaigns: 150,
-      storage: "10GB",
-      hits_per_month: 50000,
-      branding: "No #PoweredbyVidCode Branding",
-    },
-    recommended: false,
+      "A solid step up for Vidys that see steady traffic throughout the month.",
+    recommended: true,
+    benefits: [
+      { label: "1 GB storage", icon: "STORAGE" },
+      { label: "7,500 monthly hits", icon: "SCAN" },
+      { label: "No Vidy Branding", icon: "NO_BRANDING" },
+    ],
   },
   {
-    id: "pro_plus",
-    name: "Pro Plus",
-    price_per_month: 65,
-    price_per_year: 780,
-    billing_cycle: "Annually",
+    id: "High-Traffic",
+    name: "High-Traffic",
+    price_per_month: 9.99,
     description:
-      "Big volume, real performance. The go-to plan for agencies, teams, and multi-campaign power users.",
-    benefits: {
-      campaigns: 300,
-      storage: "25GB",
-      hits_per_month: 150000,
-      branding: "No #PoweredbyVidCode Branding",
-    },
+      "Designed for Vidys placed on signage, packaging, or materials seen by lots of people.",
     recommended: false,
+    benefits: [
+      { label: "3 GB storage", icon: "STORAGE" },
+      { label: "20,000 monthly hits", icon: "SCAN" },
+      { label: "No Vidy Branding", icon: "NO_BRANDING" },
+    ],
+  },
+  {
+    id: "Scale",
+    name: "Scale",
+    price_per_month: 14.99,
+    description:
+      "Best for high-visibility Vidys where consistent traffic is expected all month long.",
+    recommended: false,
+    benefits: [
+      { label: "10 GB Storage", icon: "STORAGE" },
+      { label: "35,000 hits/month", icon: "SCAN" },
+      { label: "No Vidy Branding", icon: "NO_BRANDING" },
+    ],
   },
 ];
 
@@ -1088,7 +1049,8 @@ export const SUPPORT_NOTES_DATA = [
     id: "SUP-001",
     account_name: "Acme Marketing",
     type: "Support",
-    message: "Unable to upload assets for Campaign CMP-10234.",
+    message:
+      "Unable to upload assets for Campaign CMP-10234. Unable to upload assets for Campaign CMP-10234.Unable to upload assets for Campaign CMP-10234.",
     status: "Open",
     created_at: "2025-12-15 10:32:45",
   },
@@ -1104,7 +1066,8 @@ export const SUPPORT_NOTES_DATA = [
     id: "SUP-003",
     account_name: "PixelCraft Designs",
     type: "Note",
-    message: "Client requested plan downgrade starting next billing cycle.",
+    message:
+      "Client requested plan downgrade starting next billing cycle. Unable to upload assets for Campaign CMP-10234.",
     status: "Closed",
     created_at: "2025-12-13 09:05:30",
   },
@@ -1120,7 +1083,8 @@ export const SUPPORT_NOTES_DATA = [
     id: "SUP-005",
     account_name: "BrightAds Agency",
     type: "Support",
-    message: "Billing invoice not generated for November month.",
+    message:
+      "Billing invoice not generated for November month. Unable to upload assets for Campaign CMP-10234. Unable to upload assets for Campaign CMP-10234. Unable to upload assets for Campaign CMP-10234. ",
     status: "Open",
     created_at: "2025-12-11 11:27:08",
   },
