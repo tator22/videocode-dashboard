@@ -4,6 +4,7 @@
 
 tr {
   background-color: rgba(var(--white));
+  text-align: center;
 }
 
 td,

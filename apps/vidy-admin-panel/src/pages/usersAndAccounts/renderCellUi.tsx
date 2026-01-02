@@ -1,9 +1,9 @@
 import StatusChip from "@/components/StatusChip";
+import { Text } from "@repo/UI";
+import { CONSTANTS } from "@repo/utilities";
 import moment from "moment";
 import { FC } from "react";
 import { TableColumnId } from "./tableColumn";
-import { Text } from "@repo/UI";
-import { CONSTANTS } from "@repo/utilities";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -13,7 +13,12 @@ interface RenderCellsUiProps {
 }
 
 const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
-  // Table Columns
+  // Variables
+  const style = {
+    fontSize: "inherit",
+    color: "inherit",
+    whiteSpace: "nowrap",
+  };
 
   // Last Active At
   if (el === "last_active_at") {
@@ -39,22 +44,14 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
       <td style={{ display: "flex", flexDirection: "column" }}>
         <Text
           containerProps={{
-            style: {
-              fontSize: "inherit",
-              color: "inherit",
-              whiteSpace: "nowrap",
-            },
+            style,
           }}
         >
           {row?.account_name}
         </Text>
         <Text
           containerProps={{
-            style: {
-              fontSize: "inherit",
-              color: "inherit",
-              whiteSpace: "nowrap",
-            },
+            style,
           }}
         >
           {row?.email}
@@ -77,30 +74,30 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     );
   }
 
-  // Platforms
-  else if (el === "platforms") {
-    return (
-      <td style={{ whiteSpace: "nowrap" }}>
-        {row.platforms.map((item: any) => item).join(", ")}
-      </td>
-    );
-  }
+  // // Platforms
+  // else if (el === "platforms") {
+  //   return (
+  //     <td style={{ whiteSpace: "nowrap" }}>
+  //       {row.platforms.map((item: any) => item).join(", ")}
+  //     </td>
+  //   );
+  // }
 
-  // Storage
-  else if (el === "storage_used") {
-    return (
-      <td style={{ whiteSpace: "nowrap" }}>{`${row.storage_used}/15GB`}</td>
-    );
-  }
+  // // Storage
+  // else if (el === "storage_used") {
+  //   return (
+  //     <td style={{ whiteSpace: "nowrap" }}>{`${row.storage_used}/15GB`}</td>
+  //   );
+  // }
 
-  // Storage
-  else if (el === "hits_this_month") {
-    return (
-      <td
-        style={{ whiteSpace: "nowrap" }}
-      >{`${row.hits_this_month}/${row?.total_limit}`}</td>
-    );
-  }
+  // // Storage
+  // else if (el === "hits_this_month") {
+  //   return (
+  //     <td
+  //       style={{ whiteSpace: "nowrap" }}
+  //     >{`${row.hits_this_month}/${row?.total_limit}`}</td>
+  //   );
+  // }
 
   // MRR
   else if (el === "mrr") {
