@@ -5,9 +5,11 @@ import classes from "./style.module.css";
 const EditPlanModal = ({
   onClose,
   isOpen,
+  context,
 }: {
   onClose: (e?: any) => void;
   isOpen: boolean;
+  context?: "account_users" | "campaign_users";
 }) => {
   // Hooks
   const { t } = useTranslation();
@@ -38,19 +40,24 @@ const EditPlanModal = ({
               placeholder: t(`${translationKey}.enter_storage`),
             }}
           />
-          {/* <Input
-            label={t(`${translationKey}.campaign_limit`)}
-            inputProps={{
-              required: true,
-              placeholder: t(`${translationKey}.enter_campaign_limit`),
-            }}
-          /> */}
-          <Switch
-            label={t(`${translationKey}.branding`)}
-            inputProps={{
-              required: true,
-            }}
-          />
+          {/* {context === "campaign_users" ? null : (
+            <Input
+              label={t(`${translationKey}.campaign_limit`)}
+              inputProps={{
+                required: true,
+                placeholder: t(`${translationKey}.enter_campaign_limit`),
+              }}
+            />
+          )} */}
+
+          {context === "account_users" ? null : (
+            <Switch
+              label={t(`${translationKey}.branding`)}
+              inputProps={{
+                required: true,
+              }}
+            />
+          )}
         </div>
 
         <div className={classes.buttonGroup}>

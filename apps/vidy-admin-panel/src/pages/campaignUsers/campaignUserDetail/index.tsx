@@ -121,7 +121,11 @@ export const CampaignUserDetail: FC = () => {
       )}
 
       {enablePlanEditModal && (
-        <EditPlanModal onClose={handleEditPlan} isOpen={enablePlanEditModal} />
+        <EditPlanModal
+          onClose={handleEditPlan}
+          isOpen={enablePlanEditModal}
+          context="campaign_users"
+        />
       )}
     </div>
   );

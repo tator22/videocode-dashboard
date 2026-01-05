@@ -7,8 +7,8 @@ import { Text } from "@repo/UI";
 import { CONSTANTS, generateRoutePath } from "@repo/utilities";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { TableColumnId } from "./tableColumn";
 import { useNavigate } from "react-router";
+import { TableColumnId } from "./tableColumn";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -162,10 +162,6 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
                 })
               )
             }
-          />
-          <TableActionMenuItemRender
-            icon={ASSET_PATHS.SVGS.ACTION_EDIT}
-            name={t(`${translationKey}.edit_limit`)}
           />
           <TableActionMenuItemRender
             icon={ASSET_PATHS.SVGS.VIEW_STRIPE}

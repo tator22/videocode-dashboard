@@ -1,14 +1,14 @@
 import EditPlanModal from "@/components/EditPlanModal";
 import Header from "@/components/Header";
+import { Campaigns } from "@/pages/campaigns";
 import { Button, RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
-// import AddNoteModal from "../addNoteModal";
 import styles from "./style.module.css";
 import { ChangeLogs } from "./tabs/changeLogs";
 import Details from "./tabs/detail";
 
-export const PlansAndBillingDetail: FC = () => {
+export const AccountUserDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
@@ -18,6 +18,10 @@ export const PlansAndBillingDetail: FC = () => {
     {
       label: t(`${translationKey}.details`),
       key: "details",
+    },
+    {
+      label: t(`${translationKey}.campaigns`),
+      key: "campaigns",
     },
     {
       label: t(`${translationKey}.change_logs`),
@@ -30,7 +34,6 @@ export const PlansAndBillingDetail: FC = () => {
     label: "",
     key: "details",
   });
-  // const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
   const [enablePlanEditModal, setEnablePlanEditModal] = useState(false);
 
   // Functions
@@ -39,6 +42,8 @@ export const PlansAndBillingDetail: FC = () => {
       switch (activeTab.key) {
         case "details":
           return <Details />;
+        case "campaigns":
+          return <Campaigns mode="detail" />;
         case "change_logs":
           return <ChangeLogs />;
         default:
@@ -46,10 +51,6 @@ export const PlansAndBillingDetail: FC = () => {
       }
     }
   };
-
-  // const handleEnableAddNoteModal = () => {
-  //   setEnableAddNoteModal((prev) => !prev);
-  // };
 
   const handleEditPlan = () => {
     setEnablePlanEditModal((prev) => !prev);
@@ -80,9 +81,6 @@ export const PlansAndBillingDetail: FC = () => {
               size="medium"
               variant="secondary"
             />
-            {/* 
-            <Separator direction="vertical" />
-            <StatusChip status={"active"} /> */}
           </>
         }
       />
@@ -105,7 +103,11 @@ export const PlansAndBillingDetail: FC = () => {
       )} */}
 
       {enablePlanEditModal && (
-        <EditPlanModal onClose={handleEditPlan} isOpen={enablePlanEditModal} />
+        <EditPlanModal
+          onClose={handleEditPlan}
+          isOpen={enablePlanEditModal}
+          context="account_users"
+        />
       )}
     </div>
   );

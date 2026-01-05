@@ -1,3 +1,5 @@
+import { AccountUserDetail } from "@/pages/accountUsers/accountUserDetail/index.js";
+import { AccountUsers } from "@/pages/accountUsers/index.js";
 import Authentication from "@/pages/authentication/index.js";
 import { CampaignDetail } from "@/pages/campaigns/campaignDetail/index.js";
 import { Campaigns } from "@/pages/campaigns/index.js";
@@ -6,8 +8,6 @@ import { CampaignUsers } from "@/pages/campaignUsers/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
-import { AccountUsers } from "@/pages/accountUsers/index.js";
-import { PlansAndBillingDetail } from "@/pages/accountUsers/plansAndBillingDetail/index.js";
 import { StorageAndAsset } from "@/pages/storageAndAsset/index.js";
 import { Support } from "@/pages/support/index.js";
 import { SystemSetting } from "@/pages/systemSetting/index.js";
@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
-        element: <PlansAndBillingDetail />,
+        element: <AccountUserDetail />,
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,

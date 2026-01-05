@@ -53,7 +53,6 @@
     },
     "CAMPAIGN_USERS": {
       "heading": "Campaign Users",
-      "new_cta": "Create Account",
       "filters": "Filters",
       "filter": "Filter",
       "type": "Type",
@@ -148,6 +147,7 @@
       }
     },
     "ACCOUNT_USERS": {
+      "new_cta": "Create Account",
       "heading": "Account Users",
       "plans_overview": "Plans Overview",
       "account_billing_snapshot": "Account Billing Snapshot",
@@ -162,6 +162,7 @@
       "email": "Email:",
       "details": "Details",
       "view_stripe": "View Stripe",
+      "search": "Search",
       "DETAIL": {
         "change_logs": "Change Logs",
         "heading": "Account User Detail",
@@ -202,7 +203,8 @@
         "usage_and_overage_monitor": "Usage and Overage Monitor",
         "projected_hits_by_month": "Projected Hits by Month-End",
         "overage_state": "Overage State",
-        "add_on": "Add On"
+        "add_on": "Add On",
+        "campaigns": "Campaigns"
       }
     },
     "STORAGE_AND_ASSETS": {
