@@ -51,8 +51,8 @@
         "cta": "Login"
       }
     },
-    "USERS_AND_ACCOUNTS": {
-      "heading": "Users & Accounts",
+    "CAMPAIGN_USERS": {
+      "heading": "Campaign Users",
       "new_cta": "Create Account",
       "filters": "Filters",
       "filter": "Filter",
@@ -61,7 +61,7 @@
       "cancel": "Cancel",
       "search": "Search",
       "DETAIL": {
-        "heading": "User & Accounts Detail",
+        "heading": "Campaign Users Detail",
         "account_name": "Account name",
         "email": "Email",
         "platform": "Platform(s)",
@@ -80,7 +80,8 @@
         "switch_account": "Switch to Account-Based User",
         "change_logs": "Change Logs",
         "details": "Details",
-        "mrr": "MRR (Monthly Recurring Revenue)"
+        "mrr": "MRR (Monthly Recurring Revenue)",
+        "campaigns": "Campaigns"
       },
       "ADD_NOTES_MODAL": {
         "admin_note": "Admin Note",
@@ -146,8 +147,8 @@
         "delete": "Delete"
       }
     },
-    "PLANS_AND_BILLING": {
-      "heading": "Plans & Billing",
+    "ACCOUNT_USERS": {
+      "heading": "Account Users",
       "plans_overview": "Plans Overview",
       "account_billing_snapshot": "Account Billing Snapshot",
       "storage_used": "Storage Used:",
@@ -163,7 +164,7 @@
       "view_stripe": "View Stripe",
       "DETAIL": {
         "change_logs": "Change Logs",
-        "heading": "Plans & Billing Detail",
+        "heading": "Account User Detail",
         "details": "Details",
         "account": "Account",
         "contracts": "Contracts",

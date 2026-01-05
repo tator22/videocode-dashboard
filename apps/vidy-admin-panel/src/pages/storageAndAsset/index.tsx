@@ -6,7 +6,7 @@ import styles from "./style.module.css";
 import { StorageByAccount } from "./tabs/storageByAccount";
 import { StorageByCampaign } from "./tabs/storageByCampaign";
 import { Searchbar } from "@/layout/searchbar";
-import { USERS_AND_ACCOUNTS } from "@repo/utilities";
+import { CAMPAIGN_USERS } from "@repo/utilities";
 
 export const StorageAndAsset: FC = () => {
   // Hooks
@@ -71,7 +71,7 @@ export const StorageAndAsset: FC = () => {
             ) : (
               <Dropdown
                 placeholder={t(`${translationKey}.select_account`)}
-                data={USERS_AND_ACCOUNTS}
+                data={CAMPAIGN_USERS}
                 displayKey="account_name"
                 setSelectedValue={(value) => console.log(value)}
                 valueKey={"account_id"}

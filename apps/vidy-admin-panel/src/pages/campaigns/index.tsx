@@ -9,7 +9,7 @@ import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
 
-export const Campaigns: FC = () => {
+export const Campaigns: FC<{ mode?: "detail" }> = ({ mode }) => {
   // Hooks
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -22,7 +22,6 @@ export const Campaigns: FC = () => {
   const [enableFilterModal, setEnableFilterModal] = useState(false);
 
   // Functions
-
   const handleEnableFilterModal = () => {
     setEnableFilterModal((prev) => !prev);
   };
@@ -40,19 +39,21 @@ export const Campaigns: FC = () => {
 
   return (
     <div className={styles.code}>
-      <Header
-        heading={t(`${translationKey}.heading`)}
-        rightChildren={
-          <Button
-            text={t(`${translationKey}.filter`)}
-            size="medium"
-            variant="secondary"
-            buttonProps={{
-              onClick: handleEnableFilterModal,
-            }}
-          />
-        }
-      />
+      {mode === "detail" ? null : (
+        <Header
+          heading={t(`${translationKey}.heading`)}
+          rightChildren={
+            <Button
+              text={t(`${translationKey}.filter`)}
+              size="medium"
+              variant="secondary"
+              buttonProps={{
+                onClick: handleEnableFilterModal,
+              }}
+            />
+          }
+        />
+      )}
 
       <DataTable
         headCells={TableColumn as any}

@@ -13,7 +13,7 @@ const AddNoteModal = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.USERS_AND_ACCOUNTS.ADD_NOTES_MODAL";
+  const translationKey = "PAGES.CAMPAIGN_USERS.ADD_NOTES_MODAL";
 
   return (
     <Modal

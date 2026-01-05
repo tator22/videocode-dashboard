@@ -12,19 +12,19 @@ import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
 
-export const PlansAndBilling: FC = () => {
+export const AccountUsers: FC = () => {
   // Hooks
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   // Variables
   const showData = TableColumn.map((el) => el.id);
-  const translationKey = "PAGES.PLANS_AND_BILLING";
+  const translationKey = "PAGES.ACCOUNT_USERS";
 
   const handleRowClick = () => {
     navigate(
       generateRoutePath({
-        url: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING_DETAIL,
+        url: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
         params: {
           id: String(1),
         },

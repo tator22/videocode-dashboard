@@ -397,7 +397,7 @@ export const PLAN_LIMITS = {
   },
 };
 
-export const USERS_AND_ACCOUNTS = [
+export const CAMPAIGN_USERS = [
   {
     id: 1,
     account_id: "ACC001",

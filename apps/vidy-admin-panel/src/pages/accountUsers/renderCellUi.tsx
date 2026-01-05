@@ -24,7 +24,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
 
   // Variables
   const style = { color: "inherit", fontSize: "inherit" };
-  const translationKey = "PAGES.PLANS_AND_BILLING";
+  const translationKey = "PAGES.ACCOUNT_USERS";
 
   // Account
   if (el === "account") {
@@ -155,7 +155,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
             onClick={() =>
               navigate(
                 generateRoutePath({
-                  url: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING_DETAIL,
+                  url: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
                   params: {
                     id: row?.account_id,
                   },

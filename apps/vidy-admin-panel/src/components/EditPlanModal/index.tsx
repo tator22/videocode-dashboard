@@ -38,13 +38,13 @@ const EditPlanModal = ({
               placeholder: t(`${translationKey}.enter_storage`),
             }}
           />
-          <Input
+          {/* <Input
             label={t(`${translationKey}.campaign_limit`)}
             inputProps={{
               required: true,
               placeholder: t(`${translationKey}.enter_campaign_limit`),
             }}
-          />
+          /> */}
           <Switch
             label={t(`${translationKey}.branding`)}
             inputProps={{
