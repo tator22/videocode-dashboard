@@ -13,7 +13,7 @@ const FilterModal = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.USERS_AND_ACCOUNTS";
+  const translationKey = "PAGES.CAMPAIGN_USERS";
   const typeData = [
     {
       value: "account",

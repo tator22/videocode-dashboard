@@ -1,24 +1,27 @@
 import EditPlanModal from "@/components/EditPlanModal";
 import Header from "@/components/Header";
-import StatusChip from "@/components/StatusChip";
-import { Button, RenderTab, renderTabProps, Separator } from "@repo/UI";
+import { Campaigns } from "@/pages/campaigns";
+import { Button, RenderTab, renderTabProps } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
-import AddNoteModal from "../addNoteModal";
 import styles from "./style.module.css";
 import { ChangeLogs } from "./tabs/changeLogs";
 import Details from "./tabs/detail";
 
-export const UserAndAccountDetail: FC = () => {
+export const AccountUserDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.USERS_AND_ACCOUNTS.DETAIL";
+  const translationKey = "PAGES.ACCOUNT_USERS.DETAIL";
   const tabs: renderTabProps[] = [
     {
       label: t(`${translationKey}.details`),
       key: "details",
+    },
+    {
+      label: t(`${translationKey}.campaigns`),
+      key: "campaigns",
     },
     {
       label: t(`${translationKey}.change_logs`),
@@ -31,7 +34,6 @@ export const UserAndAccountDetail: FC = () => {
     label: "",
     key: "details",
   });
-  const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
   const [enablePlanEditModal, setEnablePlanEditModal] = useState(false);
 
   // Functions
@@ -40,16 +42,14 @@ export const UserAndAccountDetail: FC = () => {
       switch (activeTab.key) {
         case "details":
           return <Details />;
+        case "campaigns":
+          return <Campaigns mode="detail" />;
         case "change_logs":
           return <ChangeLogs />;
         default:
           return <p>No component found</p>;
       }
     }
-  };
-
-  const handleEnableAddNoteModal = () => {
-    setEnableAddNoteModal((prev) => !prev);
   };
 
   const handleEditPlan = () => {
@@ -64,7 +64,7 @@ export const UserAndAccountDetail: FC = () => {
         rightChildren={
           <>
             <Button
-              text={t(`${translationKey}.switch_account`)}
+              text={t(`${translationKey}.edit`)}
               size="medium"
               variant="secondary"
               buttonProps={{
@@ -72,26 +72,15 @@ export const UserAndAccountDetail: FC = () => {
               }}
             />
             <Button
-              text={t(`${translationKey}.add_note`)}
+              text={t(`${translationKey}.open_in_stripe`)}
               size="medium"
               variant="secondary"
-              buttonProps={{
-                onClick: handleEnableAddNoteModal,
-              }}
             />
             <Button
-              text={t(`${translationKey}.suspended`)}
+              text={t(`${translationKey}.add_on`)}
               size="medium"
               variant="secondary"
-              buttonProps={{
-                style: {
-                  color: "rgb(var(--error))",
-                  backgroundColor: "rgb(var(--error), 0.05)",
-                },
-              }}
             />
-            <Separator direction="vertical" />
-            <StatusChip status={"active"} />
           </>
         }
       />
@@ -106,15 +95,19 @@ export const UserAndAccountDetail: FC = () => {
         <Suspense fallback="loading...">{renderTabItem()}</Suspense>
       </div>
 
-      {enableAddNoteModal && (
+      {/* {enableAddNoteModal && (
         <AddNoteModal
           onClose={handleEnableAddNoteModal}
           isOpen={enableAddNoteModal}
         />
-      )}
+      )} */}
 
       {enablePlanEditModal && (
-        <EditPlanModal onClose={handleEditPlan} isOpen={enablePlanEditModal} />
+        <EditPlanModal
+          onClose={handleEditPlan}
+          isOpen={enablePlanEditModal}
+          context="account_users"
+        />
       )}
     </div>
   );

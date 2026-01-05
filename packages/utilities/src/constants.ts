@@ -28,17 +28,19 @@ export const CONSTANTS = {
   VIDY_ADMIN_PATHS: {
     ROOT: "/",
     DASHBOARD: "/dashboard",
-    USERS_AND_ACCOUNTS: "/users-and-accounts",
-    get USERS_AND_ACCOUNTS_DETAIL() {
-      return `${this.USERS_AND_ACCOUNTS}/:id`;
+    CAMPAIGN_USERS: "/campaign-users",
+    get CAMPAIGN_USERS_DETAIL() {
+      return `${this.CAMPAIGN_USERS}/:id`;
     },
     CAMPAIGNS: "/campaigns",
     get CAMPAIGN_DETAIL() {
       return `${this.CAMPAIGNS}/:id`;
     },
     USAGE_AND_LIMITS: "/usage-and-limits",
-    PLANS_AND_BILLING: "/plans-and-billing",
-    PLANS_AND_BILLING_DETAIL: "/plans-and-billing/:id",
+    ACCOUNT_USERS: "/account-users",
+    get ACCOUNT_USERS_DETAIL() {
+      return `${this.ACCOUNT_USERS}/:id`;
+    },
     STORAGE_AND_ASSETS: "/storage-and-assets",
     FLAGS_AND_ABUSE: "/flags-and-abuse",
     SYSTEM_SETTINGS: "/system-settings",

@@ -1,23 +1,29 @@
 import EditPlanModal from "@/components/EditPlanModal";
 import Header from "@/components/Header";
-import { Button, RenderTab, renderTabProps } from "@repo/UI";
+import StatusChip from "@/components/StatusChip";
+import { Button, RenderTab, renderTabProps, Separator } from "@repo/UI";
 import { FC, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
-// import AddNoteModal from "../addNoteModal";
+import AddNoteModal from "../addNoteModal";
 import styles from "./style.module.css";
 import { ChangeLogs } from "./tabs/changeLogs";
 import Details from "./tabs/detail";
+import { Campaigns } from "@/pages/campaigns";
 
-export const PlansAndBillingDetail: FC = () => {
+export const CampaignUserDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.PLANS_AND_BILLING.DETAIL";
+  const translationKey = "PAGES.CAMPAIGN_USERS.DETAIL";
   const tabs: renderTabProps[] = [
     {
       label: t(`${translationKey}.details`),
       key: "details",
+    },
+    {
+      label: t(`${translationKey}.campaigns`),
+      key: "campaigns",
     },
     {
       label: t(`${translationKey}.change_logs`),
@@ -30,7 +36,7 @@ export const PlansAndBillingDetail: FC = () => {
     label: "",
     key: "details",
   });
-  // const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
+  const [enableAddNoteModal, setEnableAddNoteModal] = useState(false);
   const [enablePlanEditModal, setEnablePlanEditModal] = useState(false);
 
   // Functions
@@ -39,6 +45,8 @@ export const PlansAndBillingDetail: FC = () => {
       switch (activeTab.key) {
         case "details":
           return <Details />;
+        case "campaigns":
+          return <Campaigns mode="detail" />;
         case "change_logs":
           return <ChangeLogs />;
         default:
@@ -47,9 +55,9 @@ export const PlansAndBillingDetail: FC = () => {
     }
   };
 
-  // const handleEnableAddNoteModal = () => {
-  //   setEnableAddNoteModal((prev) => !prev);
-  // };
+  const handleEnableAddNoteModal = () => {
+    setEnableAddNoteModal((prev) => !prev);
+  };
 
   const handleEditPlan = () => {
     setEnablePlanEditModal((prev) => !prev);
@@ -63,7 +71,7 @@ export const PlansAndBillingDetail: FC = () => {
         rightChildren={
           <>
             <Button
-              text={t(`${translationKey}.edit`)}
+              text={t(`${translationKey}.switch_account`)}
               size="medium"
               variant="secondary"
               buttonProps={{
@@ -71,18 +79,26 @@ export const PlansAndBillingDetail: FC = () => {
               }}
             />
             <Button
-              text={t(`${translationKey}.open_in_stripe`)}
+              text={t(`${translationKey}.add_note`)}
               size="medium"
               variant="secondary"
+              buttonProps={{
+                onClick: handleEnableAddNoteModal,
+              }}
             />
             <Button
-              text={t(`${translationKey}.add_on`)}
+              text={t(`${translationKey}.suspended`)}
               size="medium"
               variant="secondary"
+              buttonProps={{
+                style: {
+                  color: "rgb(var(--error))",
+                  backgroundColor: "rgb(var(--error), 0.05)",
+                },
+              }}
             />
-            {/* 
             <Separator direction="vertical" />
-            <StatusChip status={"active"} /> */}
+            <StatusChip status={"active"} />
           </>
         }
       />
@@ -97,15 +113,19 @@ export const PlansAndBillingDetail: FC = () => {
         <Suspense fallback="loading...">{renderTabItem()}</Suspense>
       </div>
 
-      {/* {enableAddNoteModal && (
+      {enableAddNoteModal && (
         <AddNoteModal
           onClose={handleEnableAddNoteModal}
           isOpen={enableAddNoteModal}
         />
-      )} */}
+      )}
 
       {enablePlanEditModal && (
-        <EditPlanModal onClose={handleEditPlan} isOpen={enablePlanEditModal} />
+        <EditPlanModal
+          onClose={handleEditPlan}
+          isOpen={enablePlanEditModal}
+          context="campaign_users"
+        />
       )}
     </div>
   );

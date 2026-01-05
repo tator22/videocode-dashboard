@@ -7,8 +7,8 @@ import { Text } from "@repo/UI";
 import { CONSTANTS, generateRoutePath } from "@repo/utilities";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { TableColumnId } from "./tableColumn";
 import { useNavigate } from "react-router";
+import { TableColumnId } from "./tableColumn";
 
 interface RenderCellsUiProps {
   row: Record<string, any>;
@@ -24,7 +24,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
 
   // Variables
   const style = { color: "inherit", fontSize: "inherit" };
-  const translationKey = "PAGES.PLANS_AND_BILLING";
+  const translationKey = "PAGES.ACCOUNT_USERS";
 
   // Account
   if (el === "account") {
@@ -155,17 +155,13 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
             onClick={() =>
               navigate(
                 generateRoutePath({
-                  url: CONSTANTS.VIDY_ADMIN_PATHS.PLANS_AND_BILLING_DETAIL,
+                  url: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
                   params: {
                     id: row?.account_id,
                   },
                 })
               )
             }
-          />
-          <TableActionMenuItemRender
-            icon={ASSET_PATHS.SVGS.ACTION_EDIT}
-            name={t(`${translationKey}.edit_limit`)}
           />
           <TableActionMenuItemRender
             icon={ASSET_PATHS.SVGS.VIEW_STRIPE}

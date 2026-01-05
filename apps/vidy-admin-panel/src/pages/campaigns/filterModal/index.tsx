@@ -1,5 +1,5 @@
 import { Dropdown, Input, Modal } from "@repo/UI";
-import { USERS_AND_ACCOUNTS } from "@repo/utilities";
+import { CAMPAIGN_USERS } from "@repo/utilities";
 import { useTranslation } from "react-i18next";
 import classes from "./style.module.css";
 
@@ -36,14 +36,14 @@ const FilterModal = ({
             label={t(`${translationKey}.by_account`)}
             displayKey="account_name"
             valueKey="account_id"
-            data={USERS_AND_ACCOUNTS}
+            data={CAMPAIGN_USERS}
             setSelectedValue={(value) => console.log(value)}
           />
           <Dropdown
             label={t(`${translationKey}.by_plan`)}
             displayKey="account_name"
             valueKey="account_id"
-            data={USERS_AND_ACCOUNTS}
+            data={CAMPAIGN_USERS}
             setSelectedValue={(value) => console.log(value)}
           />
         </div>
