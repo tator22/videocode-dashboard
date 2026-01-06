@@ -18,7 +18,7 @@ const StatusChip = ({
         backgroundColor: `rgb(var(${getStatusColor(status)}), 0.12)`,
       }}
     >
-      {status}
+      {status.replace("_", " ")}
     </div>
   );
 };

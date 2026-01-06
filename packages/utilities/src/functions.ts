@@ -19,6 +19,7 @@ export const getStatusColor = (status: string) => {
     case CONSTANTS.ROLE.EDITOR:
       return "--black";
     case CONSTANTS.ROLE.ADMIN:
+    case CONSTANTS.STATUS.PAUSED:
       return "--information";
     case CONSTANTS.STATUS.ACTIVE:
       return "--active";
@@ -39,6 +40,7 @@ export const getStatusColor = (status: string) => {
     case CONSTANTS.STATUS.RESOLVED:
       return "--resolved";
     case CONSTANTS.STATUS.IN_PROGRESS:
+    case CONSTANTS.STATUS.PAST_DUE:
       return "--warning";
 
     default:

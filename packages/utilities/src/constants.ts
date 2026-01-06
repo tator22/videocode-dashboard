@@ -29,7 +29,7 @@ export const CONSTANTS = {
     ROOT: "/",
     DASHBOARD: "/dashboard",
     PLAN_USERS: "/plan-users",
-    get CAMPAIGN_USERS_DETAIL() {
+    get PLAN_USERS_DETAIL() {
       return `${this.PLAN_USERS}/:id`;
     },
     CAMPAIGNS: "/campaigns",
@@ -37,9 +37,9 @@ export const CONSTANTS = {
       return `${this.CAMPAIGNS}/:id`;
     },
     USAGE_AND_LIMITS: "/usage-and-limits",
-    ACCOUNT_USERS: "/account-users",
-    get ACCOUNT_USERS_DETAIL() {
-      return `${this.ACCOUNT_USERS}/:id`;
+    CUSTOMER_USERS: "/customer-users",
+    get CUSTOMER_USERS_DETAIL() {
+      return `${this.CUSTOMER_USERS}/:id`;
     },
     STORAGE_AND_ASSETS: "/storage-and-assets",
     FLAGS_AND_ABUSE: "/flags-and-abuse",
@@ -62,6 +62,8 @@ export const CONSTANTS = {
     CLOSED: "Closed",
     CANCELED: "canceled",
     IN_PROGRESS: "In Progress",
+    PAUSED: "paused",
+    PAST_DUE: "past_due",
   },
   SIDEBAR_MODE: "sidebarMode",
   QR_BODY_SHAPES: [

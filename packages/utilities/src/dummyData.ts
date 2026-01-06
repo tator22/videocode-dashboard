@@ -1115,7 +1115,7 @@ export const SUPPORT_NOTES_DATA = [
   },
 ];
 
-export const STRIPE_ACCOUNTS_DATA = [
+export const CUSTOMER_USER_DATA = [
   {
     account_id: "acct_1001",
     account: {
@@ -1137,6 +1137,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 145,
       hits_used: 312450,
     },
+    tenure: "1 Day",
+    adjust_limit: "Normal",
   },
 
   {
@@ -1160,6 +1162,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 98,
       hits_used: 195120,
     },
+    tenure: "5 Months",
+    adjust_limit: "Noraml",
   },
 
   {
@@ -1183,6 +1187,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 280,
       hits_used: 640890,
     },
+    tenure: "1.1 Years",
+    adjust_limit: "Near Limit",
   },
 
   {
@@ -1194,7 +1200,7 @@ export const STRIPE_ACCOUNTS_DATA = [
     status: "canceled",
     billing_source: "stripe",
     mrr: 79,
-    renewal_date: null,
+    renewal_date: "2024-12-28",
     payment_method: "card",
     limits_summary: {
       campaigns: 10,
@@ -1206,6 +1212,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 0,
       hits_used: 0,
     },
+    tenure: "2.4 Months",
+    adjust_limit: "Over Limit",
   },
 
   {
@@ -1214,7 +1222,7 @@ export const STRIPE_ACCOUNTS_DATA = [
       name: "BrandFlow",
       email: "ops@brandflow.com",
     },
-    status: "active",
+    status: "paused",
     billing_source: "stripe",
     mrr: 199,
     renewal_date: "2025-01-20",
@@ -1229,6 +1237,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 76,
       hits_used: 154230,
     },
+    tenure: "12 Days",
+    adjust_limit: "Normal",
   },
 ];
 

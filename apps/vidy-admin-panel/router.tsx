@@ -1,8 +1,8 @@
-import { AccountUserDetail } from "@/pages/accountUsers/accountUserDetail/index.js";
-import { AccountUsers } from "@/pages/accountUsers/index.js";
 import Authentication from "@/pages/authentication/index.js";
 import { CampaignDetail } from "@/pages/campaigns/campaignDetail/index.js";
 import { Campaigns } from "@/pages/campaigns/index.js";
+import { CustomerUserDetail } from "@/pages/customerUsers/cusotmerUserDetail/index.js";
+import { CustomerUsers } from "@/pages/customerUsers/index.js";
 import Dashboard from "@/pages/dashboard/index.js";
 import { FlagsAndAbuse } from "@/pages/flagsAndAbuse/index.js";
 import LandingScreen from "@/pages/landingScreen/index.js";
@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
         element: <PlanUsers />,
       },
       {
-        path: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGN_USERS_DETAIL,
+        path: CONSTANTS.VIDY_ADMIN_PATHS.PLAN_USERS_DETAIL,
         element: <PlanUserDetail />,
       },
       {
@@ -66,12 +66,12 @@ export const router = createBrowserRouter([
         element: <UsageAndLimit />,
       },
       {
-        path: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS,
-        element: <AccountUsers />,
+        path: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS,
+        element: <CustomerUsers />,
       },
       {
-        path: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
-        element: <AccountUserDetail />,
+        path: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS_DETAIL,
+        element: <CustomerUserDetail />,
       },
       {
         path: CONSTANTS.VIDY_ADMIN_PATHS.STORAGE_AND_ASSETS,

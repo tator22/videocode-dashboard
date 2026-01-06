@@ -180,6 +180,10 @@ import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VIEW_STRIPE from "./svgs/view-stripe.svg";
 import VISA from "./svgs/visa.svg";
 import WARNING from "./svgs/warning.svg";
+import OPEN_LINK from "./svgs/open-link.svg";
+import MONEY from "./svgs/money.svg";
+import CROSS from "./svgs/cross.svg";
+import CANCEL_ACCOUNT from "./svgs/cancel-account.svg";
 
 export const ASSET_PATHS = {
   IMAGES: {
@@ -369,5 +373,9 @@ export const ASSET_PATHS = {
     VIEW_STRIPE,
     PLAN_USER_FILLED,
     PLAN_USER_OUTLINE,
+    OPEN_LINK,
+    MONEY,
+    CROSS,
+    CANCEL_ACCOUNT,
   },
 };

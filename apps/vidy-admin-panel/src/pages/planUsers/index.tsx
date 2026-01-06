@@ -34,7 +34,7 @@ export const PlanUsers: FC = (): JSX.Element => {
   const handleRowClick = (rowId: string) => {
     navigate(
       generateRoutePath({
-        url: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGN_USERS_DETAIL,
+        url: CONSTANTS.VIDY_ADMIN_PATHS.PLAN_USERS_DETAIL,
         params: {
           id: rowId,
         },
@@ -64,11 +64,7 @@ export const PlanUsers: FC = (): JSX.Element => {
         onClickRow={handleRowClick}
         render={(row: any): ReactNode =>
           showData?.map((el, index) => (
-            <RenderCellsUi
-              key={`user-and-account-${index}`}
-              row={row}
-              el={el}
-            />
+            <RenderCellsUi key={`plan-user-${index}`} row={row} el={el} />
           ))
         }
       />

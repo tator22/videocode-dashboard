@@ -94,8 +94,10 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   // Status
   else if (el === "status") {
     return (
-      <td className={classes.statusCell}>
-        <StatusChip status={row?.status} />
+      <td>
+        <div className={classes.statusCell}>
+          <StatusChip status={row?.status} />
+        </div>
       </td>
     );
   }

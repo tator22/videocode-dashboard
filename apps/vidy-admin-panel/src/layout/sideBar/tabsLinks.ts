@@ -17,9 +17,9 @@ export const ADMIN_SIDEBAR_TABS = [
     active_icon: ASSET_PATHS.SVGS.PLAN_USER_FILLED,
   },
   {
-    key: "account_users",
-    label: "Account Users",
-    link: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS,
+    key: "customer_users",
+    label: "Customer Users",
+    link: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS,
     icon: ASSET_PATHS.SVGS.USERS_AND_ACCOUNTS_OUTLINE,
     active_icon: ASSET_PATHS.SVGS.USERS_AND_ACCOUNTS_FILLED,
   },
@@ -47,7 +47,7 @@ export const ADMIN_SIDEBAR_TABS = [
   // {
   //   key: "plans_and_billing",
   //   label: "Plans & Billing",
-  //   link: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS,
+  //   link: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS,
   //   icon: ASSET_PATHS.SVGS.PLANS_AND_BILLING_OUTLINE,
   //   active_icon: ASSET_PATHS.SVGS.PLANS_AND_BILLING_FILLED,
   // },
