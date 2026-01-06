@@ -4,7 +4,7 @@ import { DataTable } from "@repo/UI";
 import {
   CONSTANTS,
   generateRoutePath,
-  STRIPE_ACCOUNTS_DATA,
+  CUSTOMER_USER_DATA,
 } from "@repo/utilities";
 import { FC, ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,14 +14,14 @@ import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
 
-export const AccountUsers: FC = () => {
+export const CustomerUsers: FC = () => {
   // Hooks
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   // Variables
   const showData = TableColumn.map((el) => el.id);
-  const translationKey = "PAGES.ACCOUNT_USERS";
+  const translationKey = "PAGES.CUSTOMER_USERS";
 
   // Local State
   const [enableAddAccountModal, setEnableAddAccountModal] = useState(false);
@@ -34,7 +34,7 @@ export const AccountUsers: FC = () => {
   const handleRowClick = () => {
     navigate(
       generateRoutePath({
-        url: CONSTANTS.VIDY_ADMIN_PATHS.ACCOUNT_USERS_DETAIL,
+        url: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS_DETAIL,
         params: {
           id: String(1),
         },
@@ -60,7 +60,7 @@ export const AccountUsers: FC = () => {
 
       <DataTable
         headCells={TableColumn as any}
-        rows={STRIPE_ACCOUNTS_DATA as []}
+        rows={CUSTOMER_USER_DATA as []}
         onClickRow={handleRowClick}
         render={(row: any): ReactNode =>
           showData?.map((el, index) => (

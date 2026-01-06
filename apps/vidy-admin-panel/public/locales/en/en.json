@@ -51,8 +51,8 @@
         "cta": "Login"
       }
     },
-    "CAMPAIGN_USERS": {
-      "heading": "Campaign Users",
+    "PLAN_USERS": {
+      "heading": "Plan Users",
       "filters": "Filters",
       "filter": "Filter",
       "type": "Type",
@@ -60,7 +60,7 @@
       "cancel": "Cancel",
       "search": "Search",
       "DETAIL": {
-        "heading": "Campaign Users Detail",
+        "heading": "Plan Users Detail",
         "account_name": "Account name",
         "email": "Email",
         "platform": "Platform(s)",
@@ -146,9 +146,9 @@
         "delete": "Delete"
       }
     },
-    "ACCOUNT_USERS": {
+    "CUSTOMER_USERS": {
       "new_cta": "Create Account",
-      "heading": "Account Users",
+      "heading": "Customer Users",
       "plans_overview": "Plans Overview",
       "account_billing_snapshot": "Account Billing Snapshot",
       "storage_used": "Storage Used:",
@@ -160,12 +160,16 @@
       "edit_limit": "Edit Limit",
       "name": "Name:",
       "email": "Email:",
-      "details": "Details",
-      "view_stripe": "View Stripe",
+      "view_account": "View Account",
       "search": "Search",
+      "adjust_limits": "Adjust Limits",
+      "update_monthly_charge": "Update Monthly Charge",
+      "pause_billing": "Pause Billing",
+      "cancel_account": "Cancel Account",
+      "open_in_stripe": "Open in Stripe",
       "DETAIL": {
         "change_logs": "Change Logs",
-        "heading": "Account User Detail",
+        "heading": "Customer User Detail",
         "details": "Details",
         "account": "Account",
         "contracts": "Contracts",

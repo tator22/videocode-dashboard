@@ -397,7 +397,7 @@ export const PLAN_LIMITS = {
   },
 };
 
-export const CAMPAIGN_USERS = [
+export const PLAN_USERS = [
   {
     id: 1,
     account_id: "ACC001",
@@ -411,11 +411,16 @@ export const CAMPAIGN_USERS = [
     created_at: "2024-03-15T10:45:00Z",
     last_active_at: "2025-12-09T18:22:00Z",
     total_campaigns: 42,
-    storage_used: 12.5,
+    storage_used: 1250380,
+    total_storage: 15728640, // 15 GB
     hits_this_month: 185000,
-    hit_limit: 250000,
+    hit_limit: 500000,
     total_limit: PLAN_LIMITS.growth.total_limit,
     mrr: 890,
+    plan: "Starter",
+    vidys: "3",
+    total_vidy: "3",
+    tenure: "1 Days",
   },
   {
     id: 2,
@@ -430,12 +435,17 @@ export const CAMPAIGN_USERS = [
     created_at: "2024-09-01T09:30:00Z",
     last_active_at: "2025-12-08T11:10:00Z",
     total_campaigns: 7,
-    storage_used: 850,
+    storage_used: 3232492,
+    total_storage: 10485760, // 10 GB
     hits_this_month: 9200,
-    hit_limit: 20000,
+    hit_limit: 250000,
     total_limit: PLAN_LIMITS.starter.total_limit,
     monthly_charge: 99,
     mrr: 99,
+    plan: "Pro",
+    vidys: "3",
+    total_vidy: "5",
+    tenure: "5 Months",
   },
   {
     id: 3,
@@ -450,12 +460,17 @@ export const CAMPAIGN_USERS = [
     created_at: "2023-11-22T16:15:00Z",
     last_active_at: "2025-11-29T09:05:00Z",
     total_campaigns: 115,
-    storage_used: 38.7,
+    storage_used: 14932982,
+    total_storage: 26214400, // 25 GB
     hits_this_month: 510000,
-    hit_limit: 600000,
+    hit_limit: 1000000,
     total_limit: PLAN_LIMITS.pro_plus.total_limit,
     monthly_charge: 499,
     mrr: 499,
+    plan: "Scale",
+    vidys: "7",
+    total_vidy: "10",
+    tenure: "1.1 Years",
   },
   {
     id: 4,
@@ -470,11 +485,16 @@ export const CAMPAIGN_USERS = [
     created_at: "2025-02-10T12:00:00Z",
     last_active_at: "2025-12-09T21:30:00Z",
     total_campaigns: 23,
-    storage_used: 6.8,
+    storage_used: 458934,
+    total_storage: 5242880, // 5 GB
     hits_this_month: 74000,
     hit_limit: 100000,
     total_limit: PLAN_LIMITS.essentials.total_limit,
     mrr: 420,
+    plan: "Starter",
+    vidys: "2",
+    total_vidy: "3",
+    tenure: "2.4 Months",
   },
   {
     id: 5,
@@ -489,12 +509,17 @@ export const CAMPAIGN_USERS = [
     created_at: "2025-12-01T08:00:00Z",
     last_active_at: "2025-12-09T19:40:00Z",
     total_campaigns: 60,
-    storage_used: 25.4,
+    storage_used: 12028934,
+    total_storage: 52428800, // 50 GB
     hits_this_month: 320000,
-    hit_limit: 500000,
+    hit_limit: 2000000,
     total_limit: PLAN_LIMITS.custom.total_limit,
     monthly_charge: 1200,
     mrr: 1200,
+    plan: "High Traffic",
+    vidys: "17",
+    total_vidy: "20",
+    tenure: "12 Days",
   },
 ];
 
@@ -1090,7 +1115,7 @@ export const SUPPORT_NOTES_DATA = [
   },
 ];
 
-export const STRIPE_ACCOUNTS_DATA = [
+export const CUSTOMER_USER_DATA = [
   {
     account_id: "acct_1001",
     account: {
@@ -1112,6 +1137,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 145,
       hits_used: 312450,
     },
+    tenure: "1 Day",
+    adjust_limit: "Normal",
   },
 
   {
@@ -1135,6 +1162,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 98,
       hits_used: 195120,
     },
+    tenure: "5 Months",
+    adjust_limit: "Noraml",
   },
 
   {
@@ -1158,6 +1187,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 280,
       hits_used: 640890,
     },
+    tenure: "1.1 Years",
+    adjust_limit: "Near Limit",
   },
 
   {
@@ -1169,7 +1200,7 @@ export const STRIPE_ACCOUNTS_DATA = [
     status: "canceled",
     billing_source: "stripe",
     mrr: 79,
-    renewal_date: null,
+    renewal_date: "2024-12-28",
     payment_method: "card",
     limits_summary: {
       campaigns: 10,
@@ -1181,6 +1212,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 0,
       hits_used: 0,
     },
+    tenure: "2.4 Months",
+    adjust_limit: "Over Limit",
   },
 
   {
@@ -1189,7 +1222,7 @@ export const STRIPE_ACCOUNTS_DATA = [
       name: "BrandFlow",
       email: "ops@brandflow.com",
     },
-    status: "active",
+    status: "paused",
     billing_source: "stripe",
     mrr: 199,
     renewal_date: "2025-01-20",
@@ -1204,6 +1237,8 @@ export const STRIPE_ACCOUNTS_DATA = [
       storage_used_gb: 76,
       hits_used: 154230,
     },
+    tenure: "12 Days",
+    adjust_limit: "Normal",
   },
 ];
 

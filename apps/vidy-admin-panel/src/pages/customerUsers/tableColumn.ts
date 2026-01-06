@@ -8,28 +8,30 @@ export const TableColumn = [
     label: "Status",
   },
   {
+    id: "mrr",
+    label: "MRR ($/mo)",
+    enableSorting: true,
+  },
+  {
     id: "billing_source",
     label: "Billing Source",
   },
-  {
-    id: "mrr",
-    label: "MRR ($/mo)",
-  },
+
   {
     id: "renewal_date",
-    label: "Renewal Date",
-  },
-  {
-    id: "payment_method",
-    label: "Payment Method",
+    label: "Next Invoice",
   },
   {
     id: "limit_summary",
-    label: "Limit Summary",
+    label: "Usage Snapshot",
   },
   {
-    id: "usage_this_period",
-    label: "Usage This Period",
+    id: "adjust_limit",
+    label: "Limit Health",
+  },
+  {
+    id: "tenure",
+    label: "Account Age",
   },
   {
     id: "actions",

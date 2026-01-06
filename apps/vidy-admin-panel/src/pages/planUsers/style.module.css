@@ -19,3 +19,8 @@
     color: rgb(var(--black), 0.5);
   }
 }
+
+.statusCell {
+  display: flex;
+  justify-content: center;
+}

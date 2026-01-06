@@ -1,0 +1,80 @@
+.code {
+  padding-bottom: 3.5rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 34rem;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    color: rgb(var(--black), 0.5);
+  }
+}
+
+.statusCell {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------ */
+.wrapper {
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: inherit;
+  color: rgb(var(--text-primary));
+  min-width: 8rem;
+  text-align: start;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bar {
+  width: 12rem;
+  height: 0.75rem;
+  background-color: rgb(var(--primary), 0.1);
+  border-radius: 10rem;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 10rem;
+  transition: width 0.3s ease;
+}
+
+/* Color states */
+.success {
+  background-color: rgb(var(--success));
+}
+
+.warning {
+  background-color: rgb(var(--warning));
+}
+
+.critical {
+  background-color: rgb(var(--error));
+}
+
+.percent {
+  font-size: inherit;
+  color: rgb(var(--text-secondary));
+}

@@ -19,6 +19,7 @@ export const getStatusColor = (status: string) => {
     case CONSTANTS.ROLE.EDITOR:
       return "--black";
     case CONSTANTS.ROLE.ADMIN:
+    case CONSTANTS.STATUS.PAUSED:
       return "--information";
     case CONSTANTS.STATUS.ACTIVE:
       return "--active";
@@ -39,6 +40,7 @@ export const getStatusColor = (status: string) => {
     case CONSTANTS.STATUS.RESOLVED:
       return "--resolved";
     case CONSTANTS.STATUS.IN_PROGRESS:
+    case CONSTANTS.STATUS.PAST_DUE:
       return "--warning";
 
     default:
@@ -89,32 +91,33 @@ export const getUsageState = (
   limit: number
 ): {
   percentage: number;
-  status: "unlimited" | "exceeded" | "warning" | "safe";
+  status: "unlimited" | "neutral" | "warning" | "critical";
   backgroundColor?: string;
   color?: string;
 } => {
+  // Unlimited case
   if (!limit || limit === Infinity) {
     return {
       percentage: 0,
       status: "unlimited",
-      backgroundColor: "",
+      color: "rgb(var(--text-secondary))",
     };
   }
 
-  const percentage = (used / limit) * 100;
+  const percentage = Math.round((used / limit) * 100);
 
-  if (percentage >= 95) {
+  if (percentage >= 90) {
     return {
-      percentage: Math.round(percentage),
-      status: "exceeded",
+      percentage,
+      status: "critical",
       backgroundColor: "rgb(var(--error), 0.05)",
       color: "rgb(var(--error))",
     };
   }
 
-  if (percentage >= 75) {
+  if (percentage >= 70) {
     return {
-      percentage: Math.round(percentage),
+      percentage,
       status: "warning",
       backgroundColor: "rgb(var(--warning), 0.05)",
       color: "rgb(var(--warning))",
@@ -122,10 +125,28 @@ export const getUsageState = (
   }
 
   return {
-    percentage: Math.round(percentage),
-    status: "safe",
-    backgroundColor: "",
+    percentage,
+    status: "neutral",
+    backgroundColor: "rgb(var(--success), 0.05)",
+    color: "rgb(var(--success))",
   };
+};
+
+export const formatKB = (kb: number): string => {
+  if (!kb || kb <= 0) return "0 KB";
+
+  const format = (value: number, unit: string) =>
+    `${value.toFixed(1).replace(/\.0$/, "")} ${unit}`;
+
+  if (kb >= 1024 * 1024) {
+    return format(kb / (1024 * 1024), "GB");
+  }
+
+  if (kb >= 1024) {
+    return format(kb / 1024, "MB");
+  }
+
+  return `${kb} KB`;
 };
 
 // /**
