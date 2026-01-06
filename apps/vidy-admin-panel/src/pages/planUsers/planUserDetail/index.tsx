@@ -10,12 +10,12 @@ import { ChangeLogs } from "./tabs/changeLogs";
 import Details from "./tabs/detail";
 import { Campaigns } from "@/pages/campaigns";
 
-export const CampaignUserDetail: FC = () => {
+export const PlanUserDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.CAMPAIGN_USERS.DETAIL";
+  const translationKey = "PAGES.PLAN_USERS.DETAIL";
   const tabs: renderTabProps[] = [
     {
       label: t(`${translationKey}.details`),

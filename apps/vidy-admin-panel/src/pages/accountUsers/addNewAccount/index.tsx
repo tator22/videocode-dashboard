@@ -13,7 +13,7 @@ const AddNewAccount = ({
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.CAMPAIGN_USERS.ADD_NEW_ACCOUNT_MODAL";
+  const translationKey = "PAGES.PLAN_USERS.ADD_NEW_ACCOUNT_MODAL";
 
   return (
     <Modal

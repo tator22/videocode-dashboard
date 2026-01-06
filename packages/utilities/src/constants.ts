@@ -28,9 +28,9 @@ export const CONSTANTS = {
   VIDY_ADMIN_PATHS: {
     ROOT: "/",
     DASHBOARD: "/dashboard",
-    CAMPAIGN_USERS: "/campaign-users",
+    PLAN_USERS: "/plan-users",
     get CAMPAIGN_USERS_DETAIL() {
-      return `${this.CAMPAIGN_USERS}/:id`;
+      return `${this.PLAN_USERS}/:id`;
     },
     CAMPAIGNS: "/campaigns",
     get CAMPAIGN_DETAIL() {

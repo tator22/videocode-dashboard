@@ -10,11 +10,11 @@ export const ADMIN_SIDEBAR_TABS = [
     active_icon: ASSET_PATHS.SVGS.DASHBOARD_FILLED,
   },
   {
-    key: "campaign_users",
-    label: "Campaign Users",
-    link: CONSTANTS.VIDY_ADMIN_PATHS.CAMPAIGN_USERS,
-    icon: ASSET_PATHS.SVGS.CAMPAIGNS_OUTLINE,
-    active_icon: ASSET_PATHS.SVGS.CAMPAIGNS_FILLED,
+    key: "plan_users",
+    label: "Plan Users",
+    link: CONSTANTS.VIDY_ADMIN_PATHS.PLAN_USERS,
+    icon: ASSET_PATHS.SVGS.PLAN_USER_OUTLINE,
+    active_icon: ASSET_PATHS.SVGS.PLAN_USER_FILLED,
   },
   {
     key: "account_users",

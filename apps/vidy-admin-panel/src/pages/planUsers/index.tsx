@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import { Searchbar } from "@/layout/searchbar";
 import { DataTable } from "@repo/UI";
-import { CAMPAIGN_USERS, CONSTANTS, generateRoutePath } from "@repo/utilities";
+import { PLAN_USERS, CONSTANTS, generateRoutePath } from "@repo/utilities";
 import { FC, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -9,13 +9,13 @@ import RenderCellsUi from "./renderCellUi";
 import styles from "./style.module.css";
 import { TableColumn } from "./tableColumn";
 
-export const CampaignUsers: FC = (): JSX.Element => {
+export const PlanUsers: FC = (): JSX.Element => {
   // Hooks
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   // Variables
-  const translationKey = "PAGES.CAMPAIGN_USERS";
+  const translationKey = "PAGES.PLAN_USERS";
   const showData = TableColumn.map((el) => el.id);
 
   // Local State
@@ -60,7 +60,7 @@ export const CampaignUsers: FC = (): JSX.Element => {
 
       <DataTable
         headCells={TableColumn as any}
-        rows={CAMPAIGN_USERS as []}
+        rows={PLAN_USERS as []}
         onClickRow={handleRowClick}
         render={(row: any): ReactNode =>
           showData?.map((el, index) => (

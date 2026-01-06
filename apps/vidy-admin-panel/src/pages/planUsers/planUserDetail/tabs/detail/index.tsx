@@ -1,6 +1,6 @@
 import { InfoWrapper } from "@/components/InfoWrapper";
 import { InfoCard } from "@repo/UI";
-import { getUsageState, CAMPAIGN_USERS } from "@repo/utilities";
+import { getUsageState, PLAN_USERS } from "@repo/utilities";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,13 +11,13 @@ const Details = () => {
   const { t } = useTranslation();
   const { id } = useParams();
 
-  const data = CAMPAIGN_USERS[0];
+  const data = PLAN_USERS[0];
 
   // States
   const [firstUser, setFirstUser] = useState(data);
 
   // Variables
-  const translationKey = "PAGES.CAMPAIGN_USERS.DETAIL";
+  const translationKey = "PAGES.PLAN_USERS.DETAIL";
   // const hitUsageState = getUsageState(
   //   firstUser.hits_this_month,
   //   firstUser.total_limit
@@ -28,7 +28,7 @@ const Details = () => {
   // Effects
   useEffect(() => {
     if (id) {
-      CAMPAIGN_USERS.forEach((item) => {
+      PLAN_USERS.forEach((item) => {
         if (item.id === Number(id)) {
           setFirstUser(item);
         }

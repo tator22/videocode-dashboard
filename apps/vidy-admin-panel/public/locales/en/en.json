@@ -51,8 +51,8 @@
         "cta": "Login"
       }
     },
-    "CAMPAIGN_USERS": {
-      "heading": "Campaign Users",
+    "PLAN_USERS": {
+      "heading": "Plan Users",
       "filters": "Filters",
       "filter": "Filter",
       "type": "Type",
@@ -60,7 +60,7 @@
       "cancel": "Cancel",
       "search": "Search",
       "DETAIL": {
-        "heading": "Campaign Users Detail",
+        "heading": "Plan Users Detail",
         "account_name": "Account name",
         "email": "Email",
         "platform": "Platform(s)",

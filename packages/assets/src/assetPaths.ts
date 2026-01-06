@@ -174,6 +174,8 @@ import USAGE_AND_LIMIT_FILLED from "./svgs/usage-and-limit-filled.svg";
 import USAGE_AND_LIMIT_OUTLINE from "./svgs/usage-and-limit-outline.svg";
 import USERS_AND_ACCOUNTS_FILLED from "./svgs/users-and-accounts-filled.svg";
 import USERS_AND_ACCOUNTS_OUTLINE from "./svgs/users-and-accounts-outline.svg";
+import PLAN_USER_FILLED from "./svgs/plan-user-filled.svg";
+import PLAN_USER_OUTLINE from "./svgs/plan-user-outline.svg";
 import VIEW_QR_CODE from "./svgs/view-qr-code.svg";
 import VIEW_STRIPE from "./svgs/view-stripe.svg";
 import VISA from "./svgs/visa.svg";
@@ -365,5 +367,7 @@ export const ASSET_PATHS = {
     CLOSED,
     DOCUMENT,
     VIEW_STRIPE,
+    PLAN_USER_FILLED,
+    PLAN_USER_OUTLINE,
   },
 };
