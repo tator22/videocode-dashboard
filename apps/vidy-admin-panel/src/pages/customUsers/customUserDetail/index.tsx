@@ -8,12 +8,12 @@ import styles from "./style.module.css";
 import { ChangeLogs } from "./tabs/changeLogs";
 import Details from "./tabs/detail";
 
-export const CustomerUserDetail: FC = () => {
+export const CustomUserDetail: FC = () => {
   // Hooks
   const { t } = useTranslation();
 
   // Variables
-  const translationKey = "PAGES.CUSTOMER_USERS.DETAIL";
+  const translationKey = "PAGES.CUSTOM_USERS.DETAIL";
   const tabs: renderTabProps[] = [
     {
       label: t(`${translationKey}.details`),

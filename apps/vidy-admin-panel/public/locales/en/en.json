@@ -146,9 +146,9 @@
         "delete": "Delete"
       }
     },
-    "CUSTOMER_USERS": {
+    "CUSTOM_USERS": {
       "new_cta": "Create Account",
-      "heading": "Customer Users",
+      "heading": "Custom Users",
       "plans_overview": "Plans Overview",
       "account_billing_snapshot": "Account Billing Snapshot",
       "storage_used": "Storage Used:",
@@ -169,7 +169,7 @@
       "open_in_stripe": "Open in Stripe",
       "DETAIL": {
         "change_logs": "Change Logs",
-        "heading": "Customer User Detail",
+        "heading": "Custom User Detail",
         "details": "Details",
         "account": "Account",
         "contracts": "Contracts",

@@ -17,7 +17,7 @@ const Details = () => {
   const [userData, setUserData] = useState(data);
 
   // Variables
-  const translationKey = "PAGES.CUSTOMER_USERS.DETAIL";
+  const translationKey = "PAGES.CUSTOM_USERS.DETAIL";
   const hitUsageState = getUsageState(
     userData.hits_this_month,
     userData.total_limit
