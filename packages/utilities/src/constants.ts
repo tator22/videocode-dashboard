@@ -37,9 +37,9 @@ export const CONSTANTS = {
       return `${this.CAMPAIGNS}/:id`;
     },
     USAGE_AND_LIMITS: "/usage-and-limits",
-    CUSTOMER_USERS: "/customer-users",
-    get CUSTOMER_USERS_DETAIL() {
-      return `${this.CUSTOMER_USERS}/:id`;
+    CUSTOM_USERS: "/custom-users",
+    get CUSTOM_USERS_DETAIL() {
+      return `${this.CUSTOM_USERS}/:id`;
     },
     STORAGE_AND_ASSETS: "/storage-and-assets",
     FLAGS_AND_ABUSE: "/flags-and-abuse",

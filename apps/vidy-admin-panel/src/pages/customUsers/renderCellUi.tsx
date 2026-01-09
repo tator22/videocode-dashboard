@@ -26,7 +26,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
 
   // Variables
   const style = { color: "inherit", fontSize: "inherit" };
-  const translationKey = "PAGES.CUSTOMER_USERS";
+  const translationKey = "PAGES.CUSTOM_USERS";
   const campaignsUsage = getUsageState(
     row?.usage_this_period?.campaigns_used,
     row?.limits_summary?.campaigns
@@ -189,7 +189,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
             onClick={() =>
               navigate(
                 generateRoutePath({
-                  url: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOMER_USERS_DETAIL,
+                  url: CONSTANTS.VIDY_ADMIN_PATHS.CUSTOM_USERS_DETAIL,
                   params: {
                     id: row?.account_id,
                   },
