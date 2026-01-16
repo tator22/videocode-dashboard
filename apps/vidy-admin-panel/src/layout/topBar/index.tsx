@@ -5,17 +5,14 @@ import {
 import { useAppDispatch } from "@/redux/store";
 import { ASSET_PATHS } from "@repo/assets";
 import { ProfilePhoto } from "@repo/UI";
-import { CONSTANTS } from "@repo/utilities";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useEffect } from "react";
-import { useNavigate } from "react-router";
 import styles from "./style.module.css";
 
 const TopBar = () => {
   // Hooks
   // const { t } = useTranslation("layout");
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const { width } = useWindowSize();
 
   // Variables
@@ -74,7 +71,7 @@ const TopBar = () => {
 
         <ProfilePhoto
           size={"4rem"}
-          onClick={() => navigate(CONSTANTS.PATHS.ACCOUNT)}
+          // onClick={() => navigate(CONSTANTS.PATHS.ACCOUNT)}
         />
       </div>
     </div>

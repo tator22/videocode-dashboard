@@ -1,6 +1,6 @@
 import { InfoWrapper } from "@/components/InfoWrapper";
 import { InfoCard } from "@repo/UI";
-import { getUsageState, PLAN_USERS } from "@repo/utilities";
+import { formatKB, getUsageState, PLAN_USERS } from "@repo/utilities";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,23 +14,22 @@ const Details = () => {
   const data = PLAN_USERS[0];
 
   // States
-  const [firstUser, setFirstUser] = useState(data);
+  const [planUserData, setPlanUserData] = useState(data);
 
   // Variables
   const translationKey = "PAGES.PLAN_USERS.DETAIL";
-  // const hitUsageState = getUsageState(
-  //   firstUser.hits_this_month,
-  //   firstUser.total_limit
-  // );
-  const storageUsageState = getUsageState(firstUser.storage_used, 15);
-  const isAccount = firstUser.type === "account";
+  const storageUsageState = getUsageState(
+    planUserData.storage_used,
+    planUserData.total_storage
+  );
+  const isAccount = planUserData.type === "account";
 
   // Effects
   useEffect(() => {
     if (id) {
       PLAN_USERS.forEach((item) => {
         if (item.id === Number(id)) {
-          setFirstUser(item);
+          setPlanUserData(item);
         }
       });
     }
@@ -46,15 +45,15 @@ const Details = () => {
       >
         <InfoCard
           title={t(`${translationKey}.account_name`)}
-          value={firstUser.account_name}
+          value={planUserData.account_name}
         />
         <InfoCard
           title={t(`${translationKey}.email`)}
-          value={firstUser.email}
+          value={planUserData.email}
         />
         <InfoCard
           title={t(`${translationKey}.platform`)}
-          value={firstUser.platforms.map((i) => i).join(", ")}
+          value={planUserData.platforms.map((i) => i).join(", ")}
         />
         <InfoCard
           title={t(`${translationKey}.last_login_and_usage`)}
@@ -64,8 +63,8 @@ const Details = () => {
           title={t(`${translationKey}.total_campaigns`)}
           value={
             isAccount
-              ? `${firstUser.total_campaigns} / 100`
-              : `${firstUser.total_campaigns}`
+              ? `${planUserData.total_campaigns} / 100`
+              : `${planUserData.total_campaigns}`
           }
         />
         <InfoCard
@@ -74,11 +73,7 @@ const Details = () => {
             backgroundColor: storageUsageState.backgroundColor,
             color: storageUsageState.color,
           }}
-          value={
-            isAccount
-              ? `${firstUser.storage_used}GB / 15GB`
-              : `${firstUser.storage_used}GB`
-          }
+          value={`${formatKB(planUserData.storage_used)} / ${formatKB(planUserData?.total_storage)}`}
         />
       </InfoWrapper>
 
@@ -88,12 +83,12 @@ const Details = () => {
         {isAccount && (
           <InfoCard
             title={t(`${translationKey}.mrr`)}
-            value={`${CONSTANTS.CURRENCY_SYMBOL}${firstUser.mrr}`}
+            value={`${CONSTANTS.CURRENCY_SYMBOL}${planUserData.mrr}`}
           />
         )}
         <InfoCard
           title={t(`${translationKey}.current_plan`)}
-          value={firstUser.current_plan}
+          value={planUserData.current_plan}
         />
         <InfoCard
           title={t(`${translationKey}.plan_start_date`)}
@@ -112,8 +107,8 @@ const Details = () => {
           }}
           value={
             isAccount
-              ? `${firstUser.hits_this_month} / ${firstUser.total_limit}`
-              : `${firstUser.hits_this_month}`
+              ? `${planUserData.hits_this_month} / ${planUserData.total_limit}`
+              : `${planUserData.hits_this_month}`
           }
         />
       </InfoWrapper> */}
