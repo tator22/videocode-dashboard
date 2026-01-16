@@ -21,6 +21,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   };
   const vidyColors = getUsageState(row?.vidys, row?.total_vidy);
   const storageColors = getUsageState(row?.storage_used, row?.total_storage);
+  const monthlyHitsColors = getUsageState(row.hits_this_month, row?.hit_limit);
 
   // Last Active At
   // if (el === "last_active_at") {
@@ -78,7 +79,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
     return (
       <td
         style={{ whiteSpace: "nowrap", color: storageColors.color }}
-      >{`${formatKB(row.storage_used)}/${formatKB(row?.total_storage)}}`}</td>
+      >{`${formatKB(row.storage_used)}/${formatKB(row?.total_storage)}`}</td>
     );
   }
 
@@ -86,7 +87,7 @@ const RenderCellsUi: FC<RenderCellsUiProps> = ({ row, el }) => {
   else if (el === "hit_limit") {
     return (
       <td
-        style={{ whiteSpace: "nowrap" }}
+        style={{ whiteSpace: "nowrap", color: monthlyHitsColors.color }}
       >{`${row.hits_this_month}/${row?.total_limit}`}</td>
     );
   }
